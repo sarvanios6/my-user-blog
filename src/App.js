@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import login from './component/Login/Login'
+// import home from './component/Home/Home'
+// import blogs from './component/Blogs/Blogs'
+// import blogsDetails from './component/Blogs/BlogsDetails'
+// import users from './component/Users/Users'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+export const PATHS = {
+  DASHBOARD: '/',
+  HOME: '/home',
+  LOGIN: '/Login',
+  USERS: '/users',
+  BLOGS: '/blogs',
+  BLOGS_ID: '/blogs/:id'
+};
+const App = () => (
+    <Router>
+      <Switch>
+        <Route exact path={PATHS.DASHBOARD} component={login}/>
+        <Route path={PATHS.LOGIN} component={login}/>
+        {/*<Route exact path={PATHS.HOME} component={home}/>*/}
+        {/*<Route exact path={PATHS.USERS} component={users}/>*/}
+        {/*<Route exact path={PATHS.BLOGS} component={blogs}/>*/}
+        {/*<Route exact path={PATHS.BLOGS_ID} component={blogsDetails}/>*/}
+      </Switch>
+    </Router>
+)
+export default App
