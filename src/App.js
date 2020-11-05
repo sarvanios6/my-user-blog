@@ -1,10 +1,10 @@
 import React from 'react';
 import {HashRouter as Router, Route} from "react-router-dom"
 import login from './component/Login/Login'
-// import home from './component/Home/Home'
-// import blogs from './component/Blogs/Blogs'
-// import blogsDetails from './component/Blogs/BlogsDetails'
-// import users from './component/Users/Users'
+import home from './component/Home/Home'
+import blogs from './component/Blogs/Blogs'
+import blogsDetails from './component/Blogs/BlogsDetails'
+import users from './component/Users/Users'
 
 export const PATHS = {
   DASHBOARD: '/',
@@ -18,10 +18,10 @@ const App = () => (
     <Router>
         <Route exact path={PATHS.DASHBOARD} component={login}/>
         <Route path={PATHS.LOGIN} component={login}/>
-        {/*<Route exact path={PATHS.HOME} component={home}/>*/}
-        {/*<Route exact path={PATHS.USERS} component={users}/>*/}
-        {/*<Route exact path={PATHS.BLOGS} component={blogs}/>*/}
-        {/*<Route exact path={PATHS.BLOGS_ID} component={blogsDetails}/>*/}
+        <Route exact path={PATHS.HOME} component={home}/>
+        <Route exact path={PATHS.USERS} component={users}/>
+        <Route exact path={PATHS.BLOGS} component={blogs}/>
+        <Route exact path={PATHS.BLOGS_ID} component={blogsDetails}/>
     </Router>
 )
 export default App

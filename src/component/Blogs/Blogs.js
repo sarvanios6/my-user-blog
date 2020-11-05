@@ -37,17 +37,19 @@ const Blogs = () => {
     return(
         <Container>
             <LogOut />
-            <div style={{marginTop: '20px'}}>
-                <label htmlFor="basic-url">Search</label>
-                <InputGroup className="mb-3">
-                    <FormControl
-                        placeholder="Search by author name and blog title"
-                        aria-label="Search"
-                        aria-describedby="basic-addon1"
-                        onChange={({target: {value}}) => setFilterValue(value)}
-                    />
-                </InputGroup>
-            </div>
+            <Row >
+                <Col md={10} sm={7} xs={15}>
+                    <label htmlFor="basic-url">Search</label>
+                    <InputGroup className="mb-3">
+                        <FormControl
+                            placeholder="Search by author name and blog title"
+                            aria-label="Search"
+                            aria-describedby="basic-addon1"
+                            onChange={({target: {value}}) => setFilterValue(value)}
+                        />
+                    </InputGroup>
+                </Col>
+            </Row>
             <Row>
                 {blogsList?.filter(({title, userId}) => (!filterValue || title.includes(filterValue ) || userList?.find(({name}) => (!filterValue || name.includes(filterValue)))?.id === userId))
                     .map((item, i) =>

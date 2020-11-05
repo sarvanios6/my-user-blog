@@ -16,15 +16,19 @@ const Users = () => {
     return(
         <Container>
             <LogOut />
-            <label htmlFor="basic-url">Search</label>
-            <InputGroup className="mb-3">
-                <FormControl
-                    placeholder="Search by name"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                    onChange={({target: {value}}) => setFilterValue(value)}
-                />
-            </InputGroup>
+            <Row >
+                <Col xs={5}>
+                    <label htmlFor="basic-url">Search</label>
+                    <InputGroup className="mb-3">
+                        <FormControl
+                            placeholder="Search by name"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            onChange={({target: {value}}) => setFilterValue(value)}
+                        />
+                    </InputGroup>
+                </Col>
+            </Row>
             <Row >
                 {userList?.filter(({name}) => (!filterValue || name.includes(filterValue))).map(({name, username, email, address: {city}, company : {name: companyName}, website}, i) =>
                     <Col key={i}>

@@ -11,7 +11,7 @@ const Login = () => {
     }
     return (
         <div style={{float: 'right', marginRight: '20px'}}>
-            {history.location.pathname !== PATHS.HOME && <Button onClick={() => history.push(PATHS.HOME)} variant="outline" >Home</Button>}
+            {history.location.pathname !== PATHS.HOME && <Button onClick={() => history.push(PATHS.HOME)} variant="link" >Home</Button>}
             <Button onClick={handleLogOut} variant="outline-danger" >LogOut</Button>
         </div>
     )
