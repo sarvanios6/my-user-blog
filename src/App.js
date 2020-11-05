@@ -1,5 +1,6 @@
 import React from 'react';
 import {HashRouter as Router, Route} from "react-router-dom"
+import Landing from './component/Home/Landing'
 import login from './component/Login/Login'
 import home from './component/Home/Home'
 import blogs from './component/Blogs/Blogs'
@@ -16,7 +17,7 @@ export const PATHS = {
 };
 const App = () => (
     <Router>
-        <Route exact path={PATHS.DASHBOARD} component={login}/>
+        <Route exact path={PATHS.DASHBOARD} component={Landing}/>
         <Route path={PATHS.LOGIN} component={login}/>
         <Route exact path={PATHS.HOME} component={home}/>
         <Route exact path={PATHS.USERS} component={users}/>

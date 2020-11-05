@@ -51,7 +51,7 @@ const Blogs = () => {
                 </Col>
             </Row>
             <Row>
-                {blogsList?.filter(({title, userId}) => (!filterValue || title.includes(filterValue ) || userList?.find(({name}) => (!filterValue || name.includes(filterValue)))?.id === userId))
+                {blogsList?.filter(({title, userId}) => (title.includes(filterValue ) || (userList?.find(({name}) => name.includes(filterValue))?.id === userId)))
                     .map((item, i) =>
                     <Col key={i} onClick={() => history.push({pathname:`${PATHS.BLOGS}/${item.id}`, state: { blog: item }})}>
                         <Card style={cardStyle}>

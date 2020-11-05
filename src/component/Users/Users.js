@@ -17,7 +17,7 @@ const Users = () => {
         <Container>
             <LogOut />
             <Row >
-                <Col xs={5}>
+                <Col md={10} sm={7} xs={15}>
                     <label htmlFor="basic-url">Search</label>
                     <InputGroup className="mb-3">
                         <FormControl
